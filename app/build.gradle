@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "me.jessyan.armscomponent.app"
+        applicationId "com.example.xuhaoran.moduleappdemo"
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
@@ -54,8 +54,10 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     if (!isBuildModule.toBoolean()) {
 
+
     } else {
-        implementation project(":CommonRes")//因为 CommonRes 依赖了 CommonSDK, 所以如果业务模块需要公共 UI 组件就依赖 CommonRes, 如果不需要就只依赖 CommonSDK
+        //因为 CommonRes 依赖了 CommonSDK, 所以如果业务模块需要公共 UI 组件就依赖 CommonRes, 如果不需要就只依赖 CommonSDK
+        implementation project(":CommonRes")
         implementation project(":CommonService")
     }
     //tools
